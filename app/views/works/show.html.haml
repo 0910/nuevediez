@@ -1,0 +1,15 @@
+.row-fluid
+	.info
+		.controls
+			- if @work.previous
+				= link_to '< Prev.', @work.previous
+				%p - 
+			- if @work.next
+				= link_to 'Next >', @work.next
+		%p.detail #{@work.name} - #{@work.detail}
+.row
+	%ul.thumbnails
+		- 3.times do
+			- @work.images.each do |image|
+				%li.span
+					= image_tag(image.file.url(:large))

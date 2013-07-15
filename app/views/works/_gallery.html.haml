@@ -1,0 +1,8 @@
+- @works.each do |work|
+  .span2
+    = link_to(work) do
+      - if image = work.images.first
+        = image_tag(image.file.url(:large))
+      .over
+      .over_cross
+        = image_tag('over_cross.png')
