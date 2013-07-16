@@ -9,7 +9,13 @@
 		%p.detail #{@work.name} - #{@work.detail}
 .row
 	%ul.thumbnails
-		- 3.times do
-			- @work.images.each do |image|
+		-if @cover
+			- @cover.each do |image|
 				%li.span
 					= image_tag(image.file.url(:large))
+		-else
+			%h3 NO COVER FOR THIS PROJECT.
+	%ul.thumbnails
+		- @work.images.each do |image|
+			%li.span
+				= image_tag(image.file.url(:small))

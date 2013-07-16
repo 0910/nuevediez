@@ -4,6 +4,7 @@ class WorksController < InheritedResources::Base
   end
   def show
     @work = Work.find(params[:id])
+    @cover = @work.images.where(:cover => true)
   end
   def covers
     @works = Work.find(:all, :conditions => {:category => 'cover'}, :order => 'order_work_by')

@@ -15,6 +15,7 @@ ActiveAdmin.register Work do
       row :detail
       row :category
       row :order_work_by
+
     end
   end 
 
@@ -29,7 +30,8 @@ ActiveAdmin.register Work do
           fi.input :file, as: :file
         else
           fi.input :_destroy, :as => :boolean, :label => "Destroy?",
-            :hint => fi.template.image_tag(fi.object.file.url(:small)) 
+            :hint => fi.template.image_tag(fi.object.file.url(:small))
+          fi.input :cover, :as => :radio, :label => "Cover?", :collection => [["Yes", true],["No", false]]
         end
       end
     end  
