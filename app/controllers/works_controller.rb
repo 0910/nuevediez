@@ -1,13 +1,15 @@
 class WorksController < InheritedResources::Base
   def index
-    @works = Work.find(:all, :order => 'order_work_by')
+    @works = Work.all
+    @images_cover = Image.order("images.id ASC").where(:cover => true)
   end
   def show
     @work = Work.find(params[:id])
-    @cover = @work.images.where(:cover => true)
+    @cover = @work.images.where(:cover => true).first
   end
   def covers
     @works = Work.find(:all, :conditions => {:category => 'cover'}, :order => 'order_work_by')
+    @images_cover = Image.order("images.id ASC").joins(:work).where('works.category' => 'cover')
     render :index
   end
   def poster

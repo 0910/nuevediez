@@ -1,7 +1,7 @@
-- @works.each do |work|
+- @images_cover.each do |work|
   .span2
-    = link_to(work) do
-      - if image = work.images.first
+    = link_to({:action =>'show', :id => work.work_id }, :class => 'image') do
+      - if image = work
         = image_tag(image.file.url(:large))
       .over
       .over_cross

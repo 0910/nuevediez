@@ -10,20 +10,27 @@ ActiveAdmin.register Work do
   end
 
   show do |work|
-    attributes_table_with_images do
+    attributes_table do
       row :name
       row :detail
       row :category
       row :order_work_by
-
+      row :images do |item|
+          item.images.collect do |image|
+            image_tag(image.file.url(:small))
+          end.join.html_safe
+        end
     end
+    active_admin_comments
   end 
 
-  form_with_images do |f|
-    f.input :name, as: :string
-    f.input :category, :as => :select, :collection => ["cover", "poster", "identity", "random"]
-    f.input :detail, as: :text
-    f.input :order_work_by, as: :number
+  form html: {id: 'has_many_images', multipart: true} do |f|
+    f.inputs("#{f.object.class.to_s} Details") do
+      f.input :name, as: :string
+      f.input :category, :as => :select, :collection => ["cover", "poster", "identity", "random"]
+      f.input :detail, as: :text
+      f.input :order_work_by, as: :number
+    end
     f.has_many :images, title: 'images' do |fi|
       fi.inputs "Images" do
         if fi.object.new_record?
@@ -31,9 +38,10 @@ ActiveAdmin.register Work do
         else
           fi.input :_destroy, :as => :boolean, :label => "Destroy?",
             :hint => fi.template.image_tag(fi.object.file.url(:small))
-          fi.input :cover, :as => :radio, :label => "Cover?", :collection => [["Yes", true],["No", false]]
+          fi.input :cover, :as => :boolean, :label => "Cover"
         end
       end
-    end  
-  end  
+    end 
+    f.actions 
+  end 
 end
