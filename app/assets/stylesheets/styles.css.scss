@@ -1,10 +1,12 @@
 /*
 LAYOUT
 */
+body{
+	background:#080808 url(blacknoise.jpg) repeat;
+}
 .row-fluid{
   margin: 0;
 }
-.row-fluid .span12{width: 100%;}
 .no-margin{
 	position: relative;
 	padding-top: 10em;
@@ -12,11 +14,9 @@ LAYOUT
 .no-margin [class*="span"] {
     margin-left: 0;
 }
-
 /*
 FONT
 */
-
 @font-face {	
 	font: {
 		family: 'DINPro-Light';
@@ -56,7 +56,29 @@ FONT
 h6, p, a{
 	color: #545454;
 }
-h6{
+h1{
+	font:36px 'DINPro-Light', helvetica, arial, sans-serif;
+	color:#080808;
+	padding:0 10%;
+	letter-spacing: 0.4pt;
+}
+h2{
+	font:bold 60px 'DINPro-Bold', helvetica, arial, sans-serif;
+	color:#f0f0f0;
+	padding:0 20%;
+	letter-spacing: 0.4pt;
+	text-transform: uppercase;
+	text-align: center;
+}
+h3{
+	font:20px 'DINPro-Regular', helvetica, arial, sans-serif;
+	color:#606060;
+	padding:0 20%;
+	letter-spacing: 0.4pt;
+	text-transform: uppercase;
+	text-align: center;
+}
+.bold{
 	font-family: 'DINPro-Bold';
 }
 p{
@@ -73,137 +95,61 @@ p+a{
 strong{
 	font-family: 'DINPro-Bold';
 }
-
-/*
-APPLICATION
-*/
-.fixed-nav{
-	position: fixed;
-	background: white;
-	display: block;
-	width: 100%;
-	z-index: 1000;
-	.loader-container{
-		margin-bottom: 15px;	
-		border-bottom: 1px solid #545454;
-		height: 27px;
-		#loader{
-			width: 85%;
-			height: 27px;
-			overflow: hidden;
-			display: inline-block;
-			/*background: #666;*/
-		}
-		#simbols{
-			width: 12%;
-			height: 27px;
-			display: inline-block;
-			float: right;
-			background: url(sprites.png);
-			background-position: 0 -50px;
-		}
-	}
-	.brand{
-		background: url(sprites.png);
-		width: 45px;
-		height: 47px;
-		margin: 0 10px 0 45px;
-		display: inline-block;
-	}
-
-	.nav{
-		display: inline-block;
-		position: relative;
-		width: 20%;
-		li{
-			a{
-			font-family: 'DINPro-Light';
-			text-transform: uppercase;
-			color: #BBB;
-			}
-			a:hover{
-				background: none;
-				color: #DDD;
-			}
-		}
-		li.active{
-			>a{
-			color: #000;
-			font-family: 'DINPro-Bold';
-			}
-		}
-		li.info, li.contact{
-			width: 20%;
-		}
-		.pages_info, .pages_contact{
-			width: 20%;
-		}
-	}
-	.sub-section{
-		display: inline-block;
-		.work-category{
-			width: 100%;
-			height: 2em;
-			position: absolute;
-			top: 0;
-			left: 18%;
-			display: none;
-			li{
-				display: inline-block;
-				a{
-					cursor: pointer;
-				}
-			}
-		}
-	}
+.logo{
+	background: url(logo.png) no-repeat center center;
+	height:800px;
 }
-
-
-@mixin select($section){
-	body.#{$section}{
-		#navbar li.#{$section} > a{
-			color: #111;
-		}
+.weare{
+	background:#080808 url(whitenoise.jpg) repeat fixed;
+	padding:20% 0;
+}
+.works{
+	background:#080808 url(blacknoise.jpg) repeat fixed;
+	padding: 0 10% 20%;
+	h2{
+		margin:10% 0 0 0;
 	}
-}
-
-@each $section in(works, pages_info, pages_contact){
-	@include select($section);
-}
-
-#work{
-	.span2{
-		cursor: pointer;
-		position: relative;
-		overflow: hidden;
-		img{
-			width: 100%;
-		}
-		.over{
-			background: url(over.png);
-			display: none;
-			position: absolute;
-			top: 0;
-			width: 100%;
-			height: 100%;
-		}
-		.over_cross{
-			display: none;
-			position: absolute;
-			top: 100%;
-			width: 80%;
-			height: 80%;
-			margin: 10%;
-		}
-	}	
-}
-#info, #contact{
-	min-height: 500px;
-	margin: 5em 0 0 2.813em;
+	h3{
+		margin:0 0 10% 0;
+	}
 	.span4{
-		padding-right: 10em;
-		h6:first-child{
-			margin-top: 0;
+
+	}
+	.work{
+		margin:7% 0 0 0;
+		width:100%;
+		.ph{
+			height:200px;
+			background:#080808;
+			img{
+				border: 0 none;
+		    height: auto;
+		    vertical-align: middle;
+				max-width: none;
+			}
+		}
+		.info{
+			width:100%;
+			h5{
+				font:16px 'DINPro-Bold', helvetica, arial, sans-serif;
+				color:#333;
+				margin:5% 0 0 0;
+				letter-spacing: 0.4pt;
+				padding:0;
+				text-transform: uppercase;
+			}
+			p{
+				font:12px 'DINPro-Bold', helvetica, arial, sans-serif;
+				color:#808080;
+				padding:0;
+				letter-spacing: 0.4pt;
+				margin:1% 0 0 0;
+			}
 		}
 	}
 }
+.nuevediez{
+	background:#080808 url(blacknoise.jpg) repeat fixed;
+	padding:20% 0;
+}
+

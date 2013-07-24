@@ -7,8 +7,6 @@ gem 'rails', '3.2.11'
 
 gem 'mysql2'
 
-gem 'sqlite3'
-
 gem 'sass-rails',   '~> 3.2.3'
 gem 'font-awesome-sass-rails'	
 
@@ -40,7 +38,8 @@ end
 
 gem 'jquery-rails'
 gem 'haml'
-gem "bootstrap-sass", ">= 2.1.0.0"
+gem 'bootstrap-sass'
+gem 'bxslider-rails'
 gem 'settingslogic'
 gem 'capistrano'
 gem 'rvm-capistrano'
