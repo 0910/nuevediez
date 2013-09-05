@@ -57,9 +57,9 @@ h6, p, a{
 	color: #545454;
 }
 h1{
-	font:36px 'DINPro-Light', helvetica, arial, sans-serif;
-	color:#080808;
-	padding:0 10%;
+	font:34px 'DINPro-Light', helvetica, arial, sans-serif;
+	color:#f0f0f0;
+	padding:0 20%;
 	letter-spacing: 0.4pt;
 }
 h2{
@@ -100,12 +100,12 @@ strong{
 	height:800px;
 }
 .weare{
-	background:#080808 url(whitenoise.jpg) repeat fixed;
+	background:#080808 url(blacknoise.jpg) repeat fixed;
 	padding:20% 0;
 }
 .works{
 	background:#080808 url(blacknoise.jpg) repeat fixed;
-	padding: 0 10% 20%;
+	padding: 0%;
 	h2{
 		margin:10% 0 0 0;
 	}
@@ -113,23 +113,28 @@ strong{
 		margin:0 0 10% 0;
 	}
 	.span4{
-
+		width:24.92%;
+		margin:0 0 0 0.1%;
 	}
 	.work{
-		margin:7% 0 0 0;
+		margin:-1px 0 0 0;
 		width:100%;
 		.ph{
 			height:200px;
-			background:#080808;
+			background-repeat: no-repeat;
+			background-size: 100%;
+			background-position: top center;
 			img{
 				border: 0 none;
 		    height: auto;
 		    vertical-align: middle;
 				max-width: none;
+				width:100%;
 			}
 		}
 		.info{
 			width:100%;
+			display:none;
 			h5{
 				font:16px 'DINPro-Bold', helvetica, arial, sans-serif;
 				color:#333;

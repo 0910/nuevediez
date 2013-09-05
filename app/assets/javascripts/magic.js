@@ -1,8 +1,11 @@
 $(function(){
-	// Cambiar el logo una vez por minuto
+	$('.work .ph').css('opacity', 0.3);
 	windowHeight = $(window).height();
-	logoHeight = windowHeight - 66;
-	$('.logo').css('height', logoHeight)
+	workHeight = windowHeight/2;
+	workHeight2 = windowHeight - windowHeight*0.15;
+	$('.logo').css('height', windowHeight);
+	$('.work .ph').css('height', workHeight);
+	$('.work .ph:first' ).css('height', workHeight).css('opacity', 1);
 
 	brand = $('.brand');
 	setInterval(function(){
@@ -11,6 +14,22 @@ $(function(){
 			brand.css('background-position', '0px 0px');
 		}, 500);
 	}, 60000);
+
+	$('.work').hover(
+    function(){
+
+      $(this).find('.ph').animate({
+		    opacity: 1,
+		    height: workHeight2
+		  }, 200);
+    },
+    function(){
+      $(this).find('.ph').animate({
+		    opacity: 0.3,
+		    height: workHeight
+		  }, 600
+    )}
+  );
 });
 $(window).scroll(function(){
   aboveHeight = $('.logo').outerHeight();

@@ -39,3 +39,48 @@
 		width:80%;
 	}
 }
+.fixednav{
+	p{
+		font:14px 'DINPro-Regular', helvetica, arial, sans-serif;
+		color:#f0f0f0;
+		text-transform: uppercase;
+		width:100%;
+		text-align:center;
+		text-decoration: underline;
+		letter-spacing: 1.8pt;
+	}
+}
+.fixednav_1{
+	position: fixed;
+	top:5%;
+	left:0;
+	width:100%;
+}
+.fixednav_2{
+	position: fixed;
+	top:50%;
+	left:-5%;
+	width:30%;
+	-webkit-transform:rotate(-90deg);
+  -moz-transform:rotate(-90deg);
+  -o-transform:rotate(-90deg);
+  filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=-1);
+  -ms-transform:rotate(-90deg);
+}
+.fixednav_3{
+	position: fixed;
+	bottom:5%;
+	left:0;
+	width:100%;
+}
+.fixednav_4{
+	position: fixed;
+	top:50%;
+	right:-5%;
+	width:30%;
+	-webkit-transform:rotate(90deg);
+  -moz-transform:rotate(90deg);
+  -o-transform:rotate(90deg);
+  filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+  -ms-transform:rotate(90deg);
+}
